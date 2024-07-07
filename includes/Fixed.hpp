@@ -8,6 +8,7 @@ class Fixed
 
     public:
         Fixed();
+        Fixed(Fixed const &fixed);
         int getRawBits(void) const;
         void setRawBits(int const raw);
 };
