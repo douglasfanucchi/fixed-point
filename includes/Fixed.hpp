@@ -7,6 +7,7 @@ class Fixed
         int _raw;
 
     public:
+        static int const _frac_bits = 8;
         Fixed();
         Fixed(Fixed const &fixed);
         ~Fixed(void);
