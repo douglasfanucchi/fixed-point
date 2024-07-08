@@ -11,6 +11,7 @@ class Fixed
         Fixed();
         Fixed(Fixed const &fixed);
         Fixed(int number);
+        Fixed(double number);
         ~Fixed(void);
         Fixed &operator=(Fixed &fixed);
         int getRawBits(void) const;
