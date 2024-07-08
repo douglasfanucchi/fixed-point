@@ -74,6 +74,16 @@ void test_should_convert_fixed_value_to_int()
     ASSERT_EQ(expected, result);
 }
 
+void test_should_convert_fixed_value_to_double()
+{
+    Fixed fixed(10.5);
+    double expected = 10.5;
+
+    double result = fixed.toDouble();
+
+    ASSERT_TRUE(abs(expected - result) < 0.001);
+}
+
 void RUN_EXAMPLE_SUITE()
 {
     test_should_create_a_fix_point();
@@ -83,4 +93,5 @@ void RUN_EXAMPLE_SUITE()
     test_should_create_fixed_object_passing_integer_to_constructor();
     test_should_create_fixed_object_passing_double_to_constructor();
     test_should_convert_fixed_value_to_int();
+    test_should_convert_fixed_value_to_double();
 }

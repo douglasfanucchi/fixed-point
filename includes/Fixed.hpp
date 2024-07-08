@@ -17,6 +17,7 @@ class Fixed
         int getRawBits(void) const;
         void setRawBits(int const raw);
         int toInt(void);
+        double toDouble(void);
 };
 
 #endif
