@@ -64,6 +64,16 @@ void test_should_create_fixed_object_passing_double_to_constructor()
     ASSERT_EQ(expected, result);
 }
 
+void test_should_convert_fixed_value_to_int()
+{
+    Fixed fixed(10);
+    int expected = 10;
+
+    int result = fixed.toInt();
+
+    ASSERT_EQ(expected, result);
+}
+
 void RUN_EXAMPLE_SUITE()
 {
     test_should_create_a_fix_point();
@@ -72,4 +82,5 @@ void RUN_EXAMPLE_SUITE()
     test_should_copy_using_assignment_operator();
     test_should_create_fixed_object_passing_integer_to_constructor();
     test_should_create_fixed_object_passing_double_to_constructor();
+    test_should_convert_fixed_value_to_int();
 }
