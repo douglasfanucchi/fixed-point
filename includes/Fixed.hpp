@@ -10,6 +10,7 @@ class Fixed
         static int const _frac_bits = 8;
         Fixed();
         Fixed(Fixed const &fixed);
+        Fixed(int number);
         ~Fixed(void);
         Fixed &operator=(Fixed &fixed);
         int getRawBits(void) const;

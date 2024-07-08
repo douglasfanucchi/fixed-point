@@ -44,10 +44,21 @@ void test_should_copy_using_assignment_operator()
     ASSERT_EQ(expected, result.getRawBits());
 }
 
+void test_should_create_fixed_object_passing_integer_to_constructor()
+{
+    Fixed fixed(10);
+    int expected = 2560;
+
+    int result = fixed.getRawBits();
+
+    ASSERT_EQ(expected, result);
+}
+
 void RUN_EXAMPLE_SUITE()
 {
     test_should_create_a_fix_point();
     test_should_change_raw_bits();
     test_should_copy_using_copy_constructor();
     test_should_copy_using_assignment_operator();
+    test_should_create_fixed_object_passing_integer_to_constructor();
 }
