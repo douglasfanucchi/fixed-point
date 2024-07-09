@@ -84,7 +84,7 @@ void test_should_convert_fixed_value_to_double()
     ASSERT_TRUE(abs(expected - result) < 0.001);
 }
 
-void test_should_compare_fixed_values_as_bigger_than()
+void test_should_compare_decimals_fixed_values_as_greater_than()
 {
     Fixed n1(10.6);
     Fixed n2(10.5);
@@ -113,6 +113,6 @@ void RUN_EXAMPLE_SUITE()
     test_should_create_fixed_object_passing_double_to_constructor();
     test_should_convert_fixed_value_to_int();
     test_should_convert_fixed_value_to_double();
-    test_should_compare_fixed_values_as_bigger_than();
+    test_should_compare_decimals_fixed_values_as_greater_than();
     test_should_compare_decimals_fixed_values_as_less_than();
 }
