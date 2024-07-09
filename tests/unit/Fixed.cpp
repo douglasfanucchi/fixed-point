@@ -172,6 +172,17 @@ void test_should_compare_decimals_values_as_less_equal()
     ASSERT_TRUE(result);
 }
 
+void test_should_compare_integer_decimal_values_as_less_equal()
+{
+    Fixed n1(10), n2(10);
+    bool result = n1 <= n2;
+    ASSERT_TRUE(result);
+
+    Fixed n3(10), n4(11);
+    result = n3 <= n4;
+    ASSERT_TRUE(result);
+}
+
 void RUN_EXAMPLE_SUITE()
 {
     test_should_create_a_fix_point();
@@ -190,4 +201,5 @@ void RUN_EXAMPLE_SUITE()
     test_should_compare_decimals_fixed_values_as_greater_equal();
     test_should_compare_integer_fixed_values_as_greater_equal();
     test_should_compare_decimals_values_as_less_equal();
+    test_should_compare_integer_decimal_values_as_less_equal();
 }
