@@ -17,6 +17,7 @@ class Fixed
         ~Fixed(void);
         Fixed &operator=(Fixed &fixed);
         bool operator>(Fixed &toBeCompared);
+        bool operator<(Fixed &toBeCompared);
         int getRawBits(void) const;
         void setRawBits(int const raw);
         int toInt(void);
