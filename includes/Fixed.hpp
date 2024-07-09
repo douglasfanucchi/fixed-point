@@ -1,6 +1,8 @@
 #ifndef FIXED_H
 # define FIXED_H
 
+#include <ostream>
+
 class Fixed
 {
     private:
@@ -19,5 +21,7 @@ class Fixed
         int toInt(void);
         double toDouble(void);
 };
+
+std::ostream &operator<<(std::ostream &str, Fixed &obj);
 
 #endif
