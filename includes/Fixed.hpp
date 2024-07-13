@@ -22,6 +22,7 @@ class Fixed
         bool operator>=(Fixed &toBeCompared);
         bool operator <=(Fixed &toBeCompared);
         bool operator !=(Fixed &toBeCompared);
+        Fixed operator+(const Fixed &n);
         int getRawBits(void) const;
         void setRawBits(int const raw);
         int toInt(void);
