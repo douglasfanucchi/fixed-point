@@ -33,7 +33,7 @@ Fixed &Fixed::operator=(Fixed &fixed) {
 }
 
 int Fixed::toInt(void) {
-    return this->_raw >> this->_frac_bits;
+    return this->_raw >> Fixed::_frac_bits;
 }
 
 double Fixed::toDouble(void) {
@@ -89,7 +89,7 @@ Fixed Fixed::operator-(const Fixed &n) {
 Fixed Fixed::operator*(const Fixed &n) {
     Fixed result;
 
-    result.setRawBits((this->getRawBits() * n.getRawBits()) >> this->_frac_bits);
+    result.setRawBits((this->getRawBits() * n.getRawBits()) >> Fixed::_frac_bits);
 
     return result;
 }
@@ -97,7 +97,7 @@ Fixed Fixed::operator*(const Fixed &n) {
 Fixed Fixed::operator/(const Fixed &n) {
     Fixed result;
 
-    result.setRawBits((signed long long)(this->getRawBits() << this->_frac_bits) / n.getRawBits());
+    result.setRawBits((signed long long)(this->getRawBits() << Fixed::_frac_bits) / n.getRawBits());
 
     return result;
 }
