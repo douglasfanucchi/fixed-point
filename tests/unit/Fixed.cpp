@@ -221,6 +221,16 @@ void test_should_subtract_two_fixed_values()
     ASSERT_EQ(expected.getRawBits(), result.getRawBits());
 }
 
+void test_should_multiply_two_fixed_values()
+{
+    Fixed n1(2.5), n2(2);
+    Fixed expected(5);
+
+    Fixed result = n1 * n2;
+
+    ASSERT_EQ(expected.getRawBits(), result.getRawBits());
+}
+
 void RUN_EXAMPLE_SUITE()
 {
     test_should_create_a_fix_point();
@@ -244,4 +254,5 @@ void RUN_EXAMPLE_SUITE()
     test_should_compare_integer_fixed_values_as_not_equal();
     test_should_add_two_fixed_points();
     test_should_subtract_two_fixed_values();
+    test_should_multiply_two_fixed_values();
 }
