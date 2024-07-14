@@ -102,4 +102,10 @@ Fixed Fixed::operator/(const Fixed &n) {
     return result;
 }
 
+Fixed Fixed::operator++(int) {
+    Fixed old(*this);
+    this->setRawBits(this->getRawBits() + 1);
+    return old;
+}
+
 Fixed::~Fixed(void) = default;
