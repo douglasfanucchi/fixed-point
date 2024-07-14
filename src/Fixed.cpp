@@ -114,4 +114,9 @@ Fixed Fixed::operator--(int) {
     return old;
 }
 
+Fixed &Fixed::operator++(void) {
+    this->setRawBits(this->getRawBits() + 1);
+    return (*this);
+}
+
 Fixed::~Fixed(void) = default;
