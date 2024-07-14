@@ -244,11 +244,14 @@ void test_should_divide_two_fixed_values()
 void test_should_increment_fixed_value_by_epsilon()
 {
     Fixed n1(1);
+    Fixed n2(1);
     Fixed expected(1 + 0.00390625);
 
     n1++;
+    ++n2;
 
     ASSERT_EQ(expected.getRawBits(), n1.getRawBits());
+    ASSERT_EQ(expected.getRawBits(), n2.getRawBits());
 }
 
 void test_should_decrement_fixed_value_by_epsilon()
