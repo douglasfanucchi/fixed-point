@@ -277,6 +277,17 @@ void test_should_get_min_value_between_two_fixed_values()
     ASSERT_EQ(expected.getRawBits(), result_2.getRawBits());
 }
 
+void test_should_get_max_value_between_two_fixed_values()
+{
+    Fixed n1(1), n2(2), expected(2);
+
+    Fixed &result_1 = Fixed::max(n1, n2);
+    const Fixed &result_2 = Fixed::max(Fixed(1), Fixed(2));
+
+    ASSERT_EQ(expected.getRawBits(), result_1.getRawBits());
+    ASSERT_EQ(expected.getRawBits(), result_2.getRawBits());
+}
+
 void RUN_EXAMPLE_SUITE()
 {
     test_should_create_a_fix_point();
@@ -305,4 +316,5 @@ void RUN_EXAMPLE_SUITE()
     test_should_increment_fixed_value_by_epsilon();
     test_should_decrement_fixed_value_by_epsilon();
     test_should_get_min_value_between_two_fixed_values();
+    test_should_get_max_value_between_two_fixed_values();
 }
