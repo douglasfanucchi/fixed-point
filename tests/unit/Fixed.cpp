@@ -251,6 +251,16 @@ void test_should_increment_fixed_value_by_epsilon()
     ASSERT_EQ(expected.getRawBits(), n1.getRawBits());
 }
 
+void test_should_decrement_fixed_value_by_epsilon()
+{
+    Fixed n1(1);
+    Fixed expected(1 - 0.00390625);
+
+    n1--;
+
+    ASSERT_EQ(expected.getRawBits(), n1.getRawBits());
+}
+
 void RUN_EXAMPLE_SUITE()
 {
     test_should_create_a_fix_point();
@@ -277,4 +287,5 @@ void RUN_EXAMPLE_SUITE()
     test_should_multiply_two_fixed_values();
     test_should_divide_two_fixed_values();
     test_should_increment_fixed_value_by_epsilon();
+    test_should_decrement_fixed_value_by_epsilon();
 }
