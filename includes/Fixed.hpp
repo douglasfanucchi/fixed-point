@@ -10,18 +10,20 @@ class Fixed
 
     public:
         static int const _frac_bits = 8;
+        static Fixed &min(Fixed &n1, Fixed &n2);
+        static const Fixed &min(const Fixed &n1, const Fixed &n2);
         Fixed();
         Fixed(Fixed const &fixed);
         Fixed(int number);
         Fixed(double number);
         ~Fixed(void);
         Fixed &operator=(Fixed &fixed);
-        bool operator>(Fixed &toBeCompared);
-        bool operator<(Fixed &toBeCompared);
-        bool operator==(Fixed &toBeCompared);
-        bool operator>=(Fixed &toBeCompared);
-        bool operator <=(Fixed &toBeCompared);
-        bool operator !=(Fixed &toBeCompared);
+        bool operator>(const Fixed &toBeCompared) const;
+        bool operator<(const Fixed &toBeCompared) const;
+        bool operator==(const Fixed &toBeCompared);
+        bool operator>=(const Fixed &toBeCompared);
+        bool operator <=(const Fixed &toBeCompared);
+        bool operator !=(const Fixed &toBeCompared);
         Fixed operator+(const Fixed &n);
         Fixed operator-(const Fixed &n);
         Fixed operator*(const Fixed &n);

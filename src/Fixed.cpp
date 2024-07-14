@@ -46,27 +46,27 @@ std::ostream& operator<<(std::ostream &output, Fixed &obj) {
     return output;
 }
 
-bool Fixed::operator>(Fixed &toBeCompared) {
+bool Fixed::operator>(const Fixed &toBeCompared) const {
     return this->getRawBits() > toBeCompared.getRawBits();
 }
 
-bool Fixed::operator<(Fixed &toBeCompared) {
+bool Fixed::operator<(const Fixed &toBeCompared) const {
     return this->getRawBits() < toBeCompared.getRawBits();
 }
 
-bool Fixed::operator==(Fixed &toBeCompared) {
+bool Fixed::operator==(const Fixed &toBeCompared) {
     return this->getRawBits() == toBeCompared.getRawBits();
 }
 
-bool Fixed::operator>=(Fixed &toBeCompared) {
+bool Fixed::operator>=(const Fixed &toBeCompared) {
     return (*this) > toBeCompared || (*this) == toBeCompared;
 }
 
-bool Fixed::operator<=(Fixed &toBeCompared) {
+bool Fixed::operator<=(const Fixed &toBeCompared) {
     return (*this) < toBeCompared || (*this) == toBeCompared;
 }
 
-bool Fixed::operator!=(Fixed &toBeCompared) {
+bool Fixed::operator!=(const Fixed &toBeCompared) {
     return !((*this) == toBeCompared);
 }
 
@@ -122,6 +122,17 @@ Fixed &Fixed::operator++(void) {
 Fixed &Fixed::operator--(void) {
     this->setRawBits(this->getRawBits() - 1);
     return (*this);
+}
+
+Fixed &Fixed::min(Fixed &n1, Fixed &n2) {
+    if (n1 > n2) {
+        return n2;
+    }
+    return n1;
+}
+
+const Fixed &Fixed::min(const Fixed &n1, const Fixed &n2) {
+    return Fixed::min((Fixed &)n1, (Fixed &)n2);
 }
 
 Fixed::~Fixed(void) = default;
