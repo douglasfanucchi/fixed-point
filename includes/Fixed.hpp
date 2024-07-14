@@ -37,9 +37,9 @@ class Fixed
         int getRawBits(void) const;
         void setRawBits(int const raw);
         int toInt(void);
-        double toDouble(void);
+        double toDouble(void) const;
 };
 
-std::ostream &operator<<(std::ostream &str, Fixed &obj);
+std::ostream &operator<<(std::ostream &str, const Fixed &obj);
 
 #endif

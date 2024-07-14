@@ -36,11 +36,11 @@ int Fixed::toInt(void) {
     return this->_raw >> Fixed::_frac_bits;
 }
 
-double Fixed::toDouble(void) {
+double Fixed::toDouble(void) const {
     return (float)this->_raw / (float)(1 << Fixed::_frac_bits);
 }
 
-std::ostream& operator<<(std::ostream &output, Fixed &obj) {
+std::ostream& operator<<(std::ostream &output, const Fixed &obj) {
     output << obj.toDouble();
 
     return output;
