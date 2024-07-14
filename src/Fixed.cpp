@@ -104,13 +104,13 @@ Fixed Fixed::operator/(const Fixed &n) {
 
 Fixed Fixed::operator++(int) {
     Fixed old(*this);
-    this->setRawBits(this->getRawBits() + 1);
+    this->operator++();
     return old;
 }
 
 Fixed Fixed::operator--(int) {
     Fixed old(*this);
-    this->setRawBits(this->getRawBits() - 1);
+    this->operator--();
     return old;
 }
 
