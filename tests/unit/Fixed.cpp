@@ -299,6 +299,17 @@ void test_should_transform_negative_values_into_postive_using_abs_function()
     ASSERT_EQ(expected_2.getRawBits(), result_2.getRawBits());
 }
 
+void test_should_keep_positive_values_as_positive_using_abs_function()
+{
+    Fixed n1(1), n2(2.5), expected_1(1), expected_2(2.5);
+
+    Fixed result_1 = n1.abs();
+    Fixed result_2 = n2.abs();
+
+    ASSERT_EQ(result_1.getRawBits(), expected_1.getRawBits());
+    ASSERT_EQ(result_2.getRawBits(), expected_2.getRawBits());
+}
+
 void RUN_EXAMPLE_SUITE()
 {
     test_should_create_a_fix_point();
