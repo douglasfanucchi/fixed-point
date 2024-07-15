@@ -34,6 +34,7 @@ class Fixed
         Fixed operator--(int);
         Fixed &operator++(void);
         Fixed &operator--(void);
+        Fixed abs(void) const;
         int getRawBits(void) const;
         void setRawBits(int const raw);
         int toInt(void);

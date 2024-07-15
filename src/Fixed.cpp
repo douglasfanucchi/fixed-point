@@ -146,4 +146,15 @@ const Fixed &Fixed::max(const Fixed &n1, const Fixed &n2) {
     return Fixed::max((Fixed &)n1, (Fixed &)n2);
 }
 
+Fixed Fixed::abs(void) const {
+    Fixed result;
+
+    int rawBits = this->getRawBits();
+    if (rawBits < 0) {
+        rawBits *= -1;
+    }
+    result.setRawBits(rawBits);
+    return result;
+}
+
 Fixed::~Fixed(void) = default;
