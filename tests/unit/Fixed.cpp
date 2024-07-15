@@ -288,6 +288,17 @@ void test_should_get_max_value_between_two_fixed_values()
     ASSERT_EQ(expected.getRawBits(), result_2.getRawBits());
 }
 
+void test_should_transform_negative_values_into_postive_using_abs_function()
+{
+    Fixed n1(-1), n2(-2.5), expected_1(1), expected_2(2.5);
+
+    Fixed result_1 = n1.abs();
+    Fixed result_2 = n2.abs();
+
+    ASSERT_EQ(expected_1.getRawBits(), result_1.getRawBits());
+    ASSERT_EQ(expected_2.getRawBits(), result_2.getRawBits());
+}
+
 void RUN_EXAMPLE_SUITE()
 {
     test_should_create_a_fix_point();
@@ -317,4 +328,5 @@ void RUN_EXAMPLE_SUITE()
     test_should_decrement_fixed_value_by_epsilon();
     test_should_get_min_value_between_two_fixed_values();
     test_should_get_max_value_between_two_fixed_values();
+    test_should_transform_negative_values_into_postive_using_abs_function();
 }
